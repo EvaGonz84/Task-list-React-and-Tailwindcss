@@ -25,6 +25,22 @@ const App = () => {
     };
     setTask([...task, newTask]);
   };
+
+  //method to update task
+  const updateTask = (id) => {
+    //when the task matches the id, the task is copied updating the status. otherwise it returns the task without updating
+    setTask(
+      task.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
+
+  //method to remove task
+  const removeTask = (id) => {
+    //filter to return tasks opposite to received id
+    setTask(task.filter((item) => item.id !== id));
+  };
   return (
     <>
       <div className="bg-[#579BB1] pb-8">
@@ -33,7 +49,11 @@ const App = () => {
       <div className="min-h-screen bg-[#F8F4EA]	">
         <main className="container mx-auto px-4 pt-8">
           <CreateTask newTask={createNewTask} />
-          <ListTask list={task} />
+          <ListTask
+            list={task}
+            updateTask={updateTask}
+            removeTask={removeTask}
+          />
           <ComputedTask />
           <FilterTask />
         </main>
