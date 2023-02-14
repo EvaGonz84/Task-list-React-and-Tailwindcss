@@ -20,7 +20,7 @@ export const ItemTask = ({ task, updateTask, removeTask }) => {
         {title}
       </p>
       <button onClick={() => removeTask(id)} className="flex-none">
-        <FaTimes className=" fill-gray-600 hover:fill-[#579BB1]" />
+        <FaTimes className=" fill-gray-600 hover:fill-black" />
       </button>
     </article>
   );

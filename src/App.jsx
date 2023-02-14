@@ -41,6 +41,12 @@ const App = () => {
     //filter to return tasks opposite to received id
     setTask(task.filter((item) => item.id !== id));
   };
+  //number of tasks completed
+  const computedTask = task.filter((item) => !item.completed).length;
+  //method to delete completed tasks
+  const clearComputedTask = () => {
+    setTask(task.filter((item) => !item.completed));
+  };
   return (
     <>
       <div className="bg-[#579BB1] pb-8">
@@ -54,7 +60,10 @@ const App = () => {
             updateTask={updateTask}
             removeTask={removeTask}
           />
-          <ComputedTask />
+          <ComputedTask
+            computedTask={computedTask}
+            clearComputedTask={clearComputedTask}
+          />
           <FilterTask />
         </main>
       </div>
