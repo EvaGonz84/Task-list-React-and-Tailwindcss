@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaTasks } from "react-icons/fa";
 import Header from "./components/header/Header";
 import ComputedTask from "./components/task/ComputedTask";
 import CreateTask from "./components/task/CreateTask";
@@ -47,6 +48,22 @@ const App = () => {
   const clearComputedTask = () => {
     setTask(task.filter((item) => !item.completed));
   };
+
+  //state containing 3 filters
+  const [filter, setFilter] = useState("All");
+  //method to filter
+  const filteredTasks = () => {
+    switch (filter) {
+      case "All":
+        return task;
+      case "Active":
+        return task.filter((item) => !item.completed);
+      case "Completed":
+        return task.filter((item) => item.completed);
+    }
+  };
+  //filter value to pass as prop
+  const changeFilter = (filter) => setFilter(filter);
   return (
     <>
       <div className="bg-[#579BB1] pb-8">
@@ -56,7 +73,7 @@ const App = () => {
         <main className="container mx-auto px-4 pt-8">
           <CreateTask newTask={createNewTask} />
           <ListTask
-            list={task}
+            list={filteredTasks()}
             updateTask={updateTask}
             removeTask={removeTask}
           />
@@ -64,7 +81,7 @@ const App = () => {
             computedTask={computedTask}
             clearComputedTask={clearComputedTask}
           />
-          <FilterTask />
+          <FilterTask changeFilter={changeFilter} filter={filter} />
         </main>
       </div>
     </>
