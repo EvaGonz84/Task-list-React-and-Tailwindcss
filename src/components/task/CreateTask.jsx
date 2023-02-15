@@ -9,19 +9,19 @@ const CreateTask = ({ newTask }) => {
       //Simple validation to remove empty spaces, the form is restarted
       return setTitle("");
     }
-    newTask(title);//Add task
-    setTitle("");//Restart the form
+    newTask(title); //Add task
+    setTitle(""); //Restart the form
   };
   return (
     <form
       onSubmit={handleSubmitAddTask}
-      className="flex items-center gap-4 overflow-hidden rounded-md border border-[#579BB1] bg-white p-4"
+      className="flex items-center gap-4 overflow-hidden rounded-md border border-[#579BB1] bg-white p-4 dark:border-gray-300 dark:bg-gray-800"
     >
       <FaRegCircle style={{ fontSize: "20px", fill: "gray" }} />
       <input
         type="text"
-        placeholder="write a new task"
-        className="w-full outline-none"
+        placeholder="Write a new task"
+        className="w-full outline-none dark:bg-gray-800 dark:text-gray-400"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

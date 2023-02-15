@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaTasks } from "react-icons/fa";
 import Header from "./components/header/Header";
 import ComputedTask from "./components/task/ComputedTask";
 import CreateTask from "./components/task/CreateTask";
@@ -66,10 +65,10 @@ const App = () => {
   const changeFilter = (filter) => setFilter(filter);
   return (
     <>
-      <div className="bg-[#579BB1] pb-8">
+      <div className="bg-[#579BB1] pb-8 dark:bg-[#4C0070]">
         <Header />
       </div>
-      <div className="min-h-screen bg-[#F8F4EA]	">
+      <div className="min-h-screen bg-[#F8F4EA]	dark:bg-gray-900">
         <main className="container mx-auto px-4 pt-8">
           <CreateTask newTask={createNewTask} />
           <ListTask
