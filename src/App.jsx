@@ -65,7 +65,7 @@ const App = () => {
   const changeFilter = (filter) => setFilter(filter);
   return (
     <>
-      <div className="bg-[#579BB1] pb-8 dark:bg-[#4C0070]">
+      <div className="bg-[#579BB1] pb-8 dark:bg-[#51557E]">
         <Header />
       </div>
       <div className="min-h-screen bg-[#F8F4EA]	dark:bg-gray-900">
