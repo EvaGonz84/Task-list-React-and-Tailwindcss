@@ -3,7 +3,7 @@ import { FaRegCircle, FaCheckCircle, FaTimes } from "react-icons/fa";
 export const ItemTask = ({ task, updateTask, removeTask }) => {
   const { id, title, completed } = task;
   return (
-    <article className="flex items-center gap-4 border-b p-4 dark:bg-gray-800">
+    <article className="flex items-center gap-4 border-b p-4 transition-all duration-1000 dark:bg-gray-800">
       <button onClick={() => updateTask(id)} className="flex-none">
         {/*check button when the task is completed*/}
         {completed ? (

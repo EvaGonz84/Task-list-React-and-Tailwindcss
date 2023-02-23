@@ -2,7 +2,7 @@ import { ItemTask } from "./ItemTask";
 
 const ListTask = ({ list, updateTask, removeTask }) => {
   return (
-    <div className="mt-8 rounded-t-md bg-white">
+    <div className="mt-8 overflow-hidden rounded-t-md bg-white transition-all duration-1000 dark:bg-gray-800">
       {list.map((task) => {
         return (
           <ItemTask

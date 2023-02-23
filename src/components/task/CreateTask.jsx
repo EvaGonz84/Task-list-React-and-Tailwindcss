@@ -15,13 +15,13 @@ const CreateTask = ({ newTask }) => {
   return (
     <form
       onSubmit={handleSubmitAddTask}
-      className="flex items-center gap-4 overflow-hidden rounded-md border border-[#579BB1] bg-white p-4 dark:border-gray-300 dark:bg-gray-800"
+      className="flex items-center gap-4 overflow-hidden rounded-md border border-[#579BB1] bg-white p-4 transition-all duration-1000 dark:border-gray-500 dark:bg-gray-800"
     >
       <FaRegCircle style={{ fontSize: "20px", fill: "gray" }} />
       <input
         type="text"
         placeholder="Write a new task"
-        className="w-full outline-none dark:bg-gray-800 dark:text-gray-400"
+        className="w-full outline-none transition-all duration-1000 dark:bg-gray-800 dark:text-gray-400"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

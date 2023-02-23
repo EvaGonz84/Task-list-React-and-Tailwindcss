@@ -65,10 +65,10 @@ const App = () => {
   const changeFilter = (filter) => setFilter(filter);
   return (
     <>
-      <div className="bg-[#579BB1] pb-8 dark:bg-[#51557E]">
+      <div className="bg-[#579BB1] pb-8 transition-all duration-1000 dark:bg-[#51557E]">
         <Header />
       </div>
-      <div className="min-h-screen bg-[#F8F4EA]	dark:bg-gray-900">
+      <div className="min-h-screen bg-[#F8F4EA] transition-all duration-1000 dark:bg-gray-900 ">
         <main className="container mx-auto px-4 pt-8">
           <CreateTask newTask={createNewTask} />
           <ListTask
