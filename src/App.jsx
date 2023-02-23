@@ -69,7 +69,7 @@ const App = () => {
         <Header />
       </div>
       <div className="min-h-screen bg-[#F8F4EA] transition-all duration-1000 dark:bg-gray-900 ">
-        <main className="container mx-auto px-4 pt-8">
+        <main className="container mx-auto px-4 pt-8 md:max-w-xl">
           <CreateTask newTask={createNewTask} />
           <ListTask
             list={filteredTasks()}
