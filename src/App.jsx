@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import ComputedTask from "./components/task/ComputedTask";
 import CreateTask from "./components/task/CreateTask";
@@ -19,7 +19,7 @@ const App = () => {
   //method to create the task
   const createNewTask = (title) => {
     const newTask = {
-      id: task.length + 1,
+      id: Date.now(),
       title,
       completed: false,
     };
@@ -69,7 +69,7 @@ const App = () => {
         <Header />
       </div>
       <div className="min-h-screen bg-[#F8F4EA] transition-all duration-1000 dark:bg-gray-900 ">
-        <main className="container mx-auto px-4 pt-8 md:max-w-xl">
+        <main className="container mx-auto px-4 py-8 md:max-w-xl">
           <CreateTask newTask={createNewTask} />
           <ListTask
             list={filteredTasks()}

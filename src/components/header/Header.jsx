@@ -21,9 +21,9 @@ const Header = () => {
   return (
     <>
       <header className="container mx-auto px-4 md:max-w-xl">
-        <div className="flex items-center justify-between py-8">
+        <div className="flex items-center justify-between py-5">
           <h1 className="text-3xl font-bold uppercase tracking-wide text-white">
-            task list
+            QuickTask
           </h1>
           <button onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? (
@@ -33,6 +33,7 @@ const Header = () => {
             )}
           </button>
         </div>
+        <p className="text-white">Create and manage your own task list in seconds</p>
       </header>
     </>
   );
